@@ -3,15 +3,15 @@ import math
 
 def dessiner_cercle(x, y): #elle reçoit en x et y comme 
     rayon = 75
-    speed(5)
-    goto(x, y-rayon) # Il se déplacera à (x, y-75) pour effectuer un cercle complet
+    speed(2)
+    goto(x - 50, y - 50) # Il se déplacera à (x, y-75) pour effectuer un cercle complet
     pendown()
     circle(rayon)
     penup()
 
 def dessiner_croix(x, y):
     cote = 150
-    speed(5)
+    speed(0)
     goto(x-(cote/2), y-(cote/2)) #On va placer la tortue dans le coin (gauche, bas) de la case choisi
     setheading(0)
     left(45)
