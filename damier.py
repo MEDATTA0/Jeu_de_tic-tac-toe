@@ -1,6 +1,9 @@
+import curses
 import turtle
 # Quelque soit le déplacement fait, la tortue garde toujours la même direction qu'on lui donne. Donc il faut la faire tourner
 # dans le bon sens
+
+#Fonction pour le damier dans turtle
 def afficher_damier():
     turtle.setup(700, 700)
     turtle.penup()
@@ -31,6 +34,28 @@ def dessiner_horizontalement():
     turtle.pendown()
     turtle.forward(600)
     turtle.penup()
+
+
+#Fonctions pour le jeu de tic tac toe sur terminal
+def dessiner_grille(win):
+    win.clear()
+    
+    #curses.window.move(win, 5, 20)
+    for i in range(5, 24):
+        if i != 11 or i != 17:
+            curses.window.addstr(win, i, 20, '|')
+    
+    #curses.window.move(win, 5, 35)
+    for i in range(5, 24):
+        if i != 11 or i != 17:
+            curses.window.addstr(win, i, 35, '|')
+
+    #curses.window.move(win, 11, 5)
+        curses.window.addstr(win, 11, 5, '-' * 45)
+    
+    #curses.window.move(win, 17, 5)
+        curses.window.addstr(win, 17, 5, '-' * 45)
+
 
 #afficher_damier()
 #turtle.done()
