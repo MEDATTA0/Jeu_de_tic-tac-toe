@@ -41,7 +41,7 @@ def dessiner_rectangle(win, y, x):
     for i in range(2, 5):
         curses.window.addstr(win, y + i, x + 13, '|')
     
-def dessiner_croix(win, y, x):
+def dessiner_crois(win, y, x):
     for i in range(1, 6):
         curses.window.addstr(win, y - i, (x + 2) + i, '  /')
     for i in range(1, 6):
