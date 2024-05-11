@@ -8,7 +8,7 @@ import argparse
 import curses
 import subprocess
 
-parser = argparse.ArgumentParser(description= "*********************************Jeu_de_tic_tac_toe*****************************")
+parser = argparse.ArgumentParser(description= "*********************************Jeu_de_tic_tac_toe***************************")
 parser.add_argument("--choice", "-c", dest= "choice", help=" \nVous choisissez l'interface de jeu. [turtle] pour l'interface graphique python,  [terminal] pour le terminal. Perso, je vous avoue que c'est pas joli :( ", required= False)
 #parser.add_argument("--help", "-h", help="Affiche la page d'aide :) \nPar défaut, si aucun argument n'est pris, alors le jeu sera joué dans le turtle de python\n")
 
