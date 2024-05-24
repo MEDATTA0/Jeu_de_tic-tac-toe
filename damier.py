@@ -46,18 +46,23 @@ def dessiner_grille(win):
     win.clear()
     
     #On va afficher les coordonnées, a, b, c et 1, 2, 3
+    c = ord('a')
     k = 0
-    c = 'a'
-    for i in x_moves:
-        curses.window.addstr(win, 4, i + 2, )
-        k += 1
-
     for i in x_moves:
         for j in range (5, 11):
+            if j == 5 and k < 3 : 
+    #On crée une condition pour insérer le répère en même temps qu'on construit le damier
+    #k < 3 pour arrêter après avoir écrit a, b et c
+                curses.window.addstr(win, 4, i + 2, chr(c + k))
+                k += 1 
             curses.window.addstr(win, j, i, '|')
         
-        
+    c = ord('1')
+    k = 0 
     for j in y_moves:
+        if k < 3 :
+            curses.window.addstr(win, j + 1, 3, chr(c + k))
+            k += 1
         curses.window.addstr(win, j, 5, '-' * 12)
 
 """    #curses.window.move(win, 5, 20)

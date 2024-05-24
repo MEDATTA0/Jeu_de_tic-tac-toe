@@ -3,6 +3,8 @@ import curses
 import math
 
 # Croix et cercle du turtle's graphics
+#coordonnees = { 'a' : -200, 'b' : 0, 'c' : 200, '1' : 200, '2' : 0, '3' : -200 }
+
 def dessiner_cercle(x, y): #elle reçoit en x et y comme 
     rayon = 75
     turtle.speed(2)
@@ -28,21 +30,23 @@ def dessiner_croix(x, y):
 
 
 #Rectangle et croix, houuuuuu; c'était chaud... :_(
-
-def dessiner_rectangle(win, y, x):
-    
+#moves = {'a' : 5, 'b' : 11, 'c' : 17, '1' : 5, '2' : 20, '3' : 35 }
+def dessiner_rectangle(win, y, x):   
+    curses.window.addstr(win, y, x + 1, 'O')
     #lignes
-    curses.window.addstr(win, y + 1, x + 2, '-' * 11)
-    curses.window.addstr(win, y + 5, x + 2, '-' * 11)
+    #curses.window.addstr(win, y + 1, x + 2, '-' * 11)
+    #curses.window.addstr(win, y + 5, x + 2, '-' * 11)
     
     #colonne
-    for i in range(2, 5):
-        curses.window.addstr(win, y + i, x + 1, '|')
-    for i in range(2, 5):
-        curses.window.addstr(win, y + i, x + 13, '|')
+    #for i in range(2, 5):
+    #    curses.window.addstr(win, y + i, x + 1, '|')
+    #for i in range(2, 5):
+    #    curses.window.addstr(win, y + i, x + 13, '|')
     
+
 def dessiner_crois(win, y, x):
-    for i in range(1, 6):
-        curses.window.addstr(win, y - i, (x + 2) + i, '  /')
-    for i in range(1, 6):
-        curses.window.addstr(win, (y - 6) + i, (x + 2) + i, '  \\')
+    curses.window.addstr(win, y, x + 1, 'X')
+    #for i in range(1, 6):
+    #    curses.window.addstr(win, y - i, (x + 2) + i, '  /')
+    #for i in range(1, 6):
+    #    curses.window.addstr(win, (y - 6) + i, (x + 2) + i, '  \\')
