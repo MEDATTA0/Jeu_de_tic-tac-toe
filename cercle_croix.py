@@ -30,22 +30,24 @@ def dessiner_croix(x, y):
 
 
 #Rectangle et croix, houuuuuu; c'était chaud... :_(
-#moves = {'a' : 5, 'b' : 11, 'c' : 17, '1' : 5, '2' : 20, '3' : 35 }
-def dessiner_rectangle(win, y, x):   
-    curses.window.addstr(win, y, x + 1, 'O')
+#moves = {'a' : 5, 'b' : 9, 'c' : 13, '1' : 5, '2' : 7, '3' : 9 }
+def dessiner_X(win, y, x):   
+    curses.window.addstr(win, y + 1, x + 2, 'X')
+    #curses.window.refresh(win)
+
     #lignes
     #curses.window.addstr(win, y + 1, x + 2, '-' * 11)
     #curses.window.addstr(win, y + 5, x + 2, '-' * 11)
-    
     #colonne
     #for i in range(2, 5):
     #    curses.window.addstr(win, y + i, x + 1, '|')
     #for i in range(2, 5):
     #    curses.window.addstr(win, y + i, x + 13, '|')
     
+def dessiner_O(win, y, x):
+    curses.window.addstr(win, y + 1, x + 2, 'O')
+    #curses.window.refresh(win)
 
-def dessiner_crois(win, y, x):
-    curses.window.addstr(win, y, x + 1, 'X')
     #for i in range(1, 6):
     #    curses.window.addstr(win, y - i, (x + 2) + i, '  /')
     #for i in range(1, 6):

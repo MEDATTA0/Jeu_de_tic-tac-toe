@@ -49,7 +49,7 @@ if  args.choice == "turtle":
 
 if args.choice == "terminal":
 
-    moves = {'a' : 5, 'b' : 11, 'c' : 17, '1' : 5, '2' : 20, '3' : 35 }
+    moves = {'a' : 5, 'b' : 9, 'c' : 13, '1' : 5, '2' : 7, '3' : 9 }
     curses.initscr()
     #subprocess.Popen(['xdg-terminal'])
     
@@ -60,51 +60,34 @@ if args.choice == "terminal":
     for i in range(0, 9):
         #La valeur qu'il va entrer sera directement traitée en correspondance dans le dictionnaire
         if i % 2 == 0:
-            #print("PLAYER1 : \n x = ")
             curses.window.move(win, 20, 5)
             curses.window.addstr(win, "PLAYER1:\n x = ")
-            #x = input("PLAYER1 : \n x = ")
             x = curses.window.getkey(win)
             x = moves[x]
-            #x = curses.window.getch(win)
-            #x = ord(x)
-            #x = moves[x]
-            #print(" y = ")
-            curses.window.refresh(win)
+            #curses.window.refresh(win)
+            
             curses.window.move(win, 21, 6)
             curses.window.addstr(win, " y = ")
             y = curses.window.getkey(win)
-            #y = input(" y = ")
-            #y = coordonnees[y]
-            #y = curses.window.getch(win)
-            #y = ord(y)
-            y = moves[y] 
-            
-            cercle_croix.dessiner_croix(win, y, x)
+            y = moves[y]
+            cercle_croix.dessiner_X(win, y, x)
+            #curses.window.refresh(win)
                    
         else:
-            #print("PLAYER2 : \n x = ")
             curses.window.move(win, 20, 5)
             curses.window.addstr(win, "PLAYER2 :\n x = ")
-            
-            #x = input("PLAYER2 : \n x = ")
+            x = curses.window.getkey(win)
             x = moves[x]
-            #x = curses.window.getch(win)
-            #x = ord(x)
-            #x = moves[x]
-            curses.window.refresh(win)
+            cercle_croix.dessiner_X(win, y, x)
+            #curses.window.refresh(win)
 
             curses.window.move(win, 21, 6)
             curses.window.addstr(win, " y = ")
             y = curses.window.getkey(win)
-            #y = curses.window.getch(win)
-            #y = ord(y)
-            #y = moves[y]
-            #y = input(" y = ")
             y = moves[y]
-            curses.window.refresh(win)
-            cercle_croix.dessiner_rectangle(win, y, x)
-            
+            cercle_croix.dessiner_O(win, y, x)
+            #curses.window.refresh(win)
+
         curses.window.refresh(win)
 
     curses.window.getch(win)
