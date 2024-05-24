@@ -6,7 +6,6 @@ import cercle_croix
 import turtle
 import argparse
 import curses
-import subprocess
 
 parser = argparse.ArgumentParser(description= "*********************************Jeu_de_tic_tac_toe***************************")
 parser.add_argument("--choice", "-c", dest= "choice", help=" \nVous choisissez l'interface de jeu. [turtle] pour l'interface graphique python,  [terminal] pour le terminal. Perso, je vous avoue que c'est pas joli :( ", required= False)
