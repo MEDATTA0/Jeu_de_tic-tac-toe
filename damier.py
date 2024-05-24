@@ -37,25 +37,45 @@ def dessiner_horizontalement():
 
 
 #Fonctions pour le jeu de tic tac toe sur terminal
+x_moves = [5, 9, 13, 17]
+y_moves = [5, 7, 9, 11]
+
+
+
 def dessiner_grille(win):
     win.clear()
     
-    #curses.window.move(win, 5, 20)
-    for i in range(5, 24):
-        if i != 11 or i != 17:
-            curses.window.addstr(win, i, 20, '|')
+    #On va afficher les coordonnées, a, b, c et 1, 2, 3
+    k = 0
+    c = 'a'
+    for i in x_moves:
+        curses.window.addstr(win, 4, i + 2, )
+        k += 1
+
+    for i in x_moves:
+        for j in range (5, 11):
+            curses.window.addstr(win, j, i, '|')
+        
+        
+    for j in y_moves:
+        curses.window.addstr(win, j, 5, '-' * 12)
+
+"""    #curses.window.move(win, 5, 20)
+    for i in range(5, 10):
+        if i != 7 or i != 9:
+            curses.window.addstr(win, i, 8, '|')
     
     #curses.window.move(win, 5, 35)
-    for i in range(5, 24):
-        if i != 11 or i != 17:
-            curses.window.addstr(win, i, 35, '|')
+    for i in range(5, 10):
+        if i != 7 or i != 9:
+            curses.window.addstr(win, i, 11, '|')
 
     #curses.window.move(win, 11, 5)
-        curses.window.addstr(win, 11, 5, '-' * 45)
+        curses.window.addstr(win, 6, 5, '-' * 17)
     
     #curses.window.move(win, 17, 5)
-        curses.window.addstr(win, 17, 5, '-' * 45)
-
+        curses.window.addstr(win, 8, 5, '-' * 17)
+"""
 
 #afficher_damier()
 #turtle.done()
